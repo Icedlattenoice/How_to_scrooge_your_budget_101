@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-account_balance = int(input("What is your account balance?\n"))
+account_balance = float(input("What is your account balance?\n"))
 my_currency = input("\nWhich currency are you using?\n")
 print(f'\nYour account balance is {account_balance} {my_currency} .')
 
@@ -38,7 +38,7 @@ for i in range(int(no_of_spendings)):
             for w in range(no_of_transactions):
                 reason_of_payment = input(f"\nWhat was transaction no {w + 1} for?\n")
                 pie_chart_labels.append(reason_of_payment)
-                cost_of_payment = int(input(f"\nHow much did the transaction no {w + 1} cost?\n"))
+                cost_of_payment = float(input(f"\nHow much did the transaction no {w + 1} cost?\n"))
                 cost_of_payments_array.append(cost_of_payment)
                 my_spendings[type_of_spending][reason_of_payment] = cost_of_payment
               
@@ -64,7 +64,7 @@ else:
 
 print(f'\nThe cost of payments array is: {cost_of_payments_array} .')
 print(f'\nThe pie chart labels array is: {pie_chart_labels} .')
-print(total_no_of_transactions)
+print(f'\nYou have a total of {total_no_of_transactions} transactions .')
 
 for z in range(no_of_transactions):
   cost_of_payments_array[z] = (cost_of_payments_array[z] * 100)/total_sum
@@ -77,7 +77,7 @@ cost_of_payments_ranked.reverse()
 pie_chart_labels_ranked.sort()
 pie_chart_labels_ranked.reverse()
 
-print('\nBased on the provided data, your top merchants are: ')
+print('\nBased on the provided data, you spent the most on: ')
 
 if total_no_of_transactions >= 3:
       print(pie_chart_labels_ranked[:3])
