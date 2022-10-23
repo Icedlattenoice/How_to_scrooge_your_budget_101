@@ -76,8 +76,10 @@ for z in range(no_of_transactions):
 cost_of_payments_ranked = cost_of_payments_array.copy()
 pie_chart_labels_ranked = pie_chart_labels.copy()
 
-cost_of_payments_ranked.sort(reverse = True)
-pie_chart_labels_ranked.sort(reverse = True)
+cost_of_payments_ranked.sort()
+cost_of_payments_ranked.reverse()
+pie_chart_labels_ranked.sort()
+pie_chart_labels_ranked.reverse()
 
 print('\nBased on the provided data, your top merchants are: ')
 
