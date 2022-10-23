@@ -68,21 +68,26 @@ else:
 
 print(f'\nThe cost of payments array is: {cost_of_payments_array} .')
 print(f'\nThe pie chart labels array is: {pie_chart_labels} .')
+print(total_no_of_transactions)
 
 for z in range(no_of_transactions):
   cost_of_payments_array[z] = (cost_of_payments_array[z] * 100)/total_sum
 
-plt.pie(cost_of_payments_array, labels = pie_chart_labels, autopct='%1.1f%%')
-plt.show()
+cost_of_payments_ranked = cost_of_payments_array.copy()
+pie_chart_labels_ranked = pie_chart_labels.copy()
 
-cost_of_payments_array.sort(reverse = True)
-pie_chart_labels.sort(reverse = True)
+cost_of_payments_ranked.sort(reverse = True)
+pie_chart_labels_ranked.sort(reverse = True)
 
 print('\nBased on the provided data, your top merchants are: ')
 
 if total_no_of_transactions >= 3:
-  for t in range(3):
-      print(pie_chart_labels[t])
+      print(pie_chart_labels_ranked[:3])
 else:
-  print(pie_chart_labels)
+  print(pie_chart_labels_ranked)
+
+
+plt.pie(cost_of_payments_array, labels = pie_chart_labels, autopct='%1.1f%%')
+plt.show()
+
 
